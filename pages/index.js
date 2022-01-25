@@ -71,10 +71,10 @@ export default function PaginaInicial() {
             <GlobalStyle />
             <Box
                 styleSheet={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',        
                     backgroundColor: appConfig.theme.colors.primary[500],
-                    backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
-                    backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
+                    backgroundImage: 'url(https://preview.redd.it/m6ptifyhde321.gif?s=fdd9acb1b7d2933df3ef999dd7f984e3f6850822)',
+                    backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
                 }}
             >
                 <Box
@@ -86,10 +86,12 @@ export default function PaginaInicial() {
                             xs: 'column',
                             sm: 'row',
                         },
-                        width: '100%', maxWidth: '700px',
+                        width: '100%', maxWidth: '600px',
                         borderRadius: '5px', padding: '32px', margin: '16px',
                         boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
                         backgroundColor: appConfig.theme.colors.neutrals[700],
+                        
+                        border: '1px solid black'
                     }}
                 >
                     {/* Formulário */}
@@ -122,9 +124,9 @@ export default function PaginaInicial() {
                             fullWidth
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
-                                mainColor: appConfig.theme.colors.primary[500],
+                                mainColor: appConfig.theme.colors.primary[600],
                                 mainColorLight: appConfig.theme.colors.primary[400],
-                                mainColorStrong: appConfig.theme.colors.primary[600],
+                                mainColorStrong: appConfig.theme.colors.primary[900],
                             }}
                         />
                     </Box>
