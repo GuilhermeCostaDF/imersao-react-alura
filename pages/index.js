@@ -40,7 +40,7 @@ function Title(props) {
             <Tag>{props.children}</Tag>
             <style jsx>{`
             ${Tag}{
-                color: ${appConfig.theme.colors.neutrals['900']};
+                color: ${appConfig.theme.colors.neutrals['000']};
                 font-size: 24px;
                 font-weight: 600;
             }
@@ -64,7 +64,7 @@ export default HomePage
 */
 
 export default function PaginaInicial() {
-    const username = 'peas';
+    const username = 'GuilhermeCostaDF';
 
     return (
         <>
@@ -100,7 +100,7 @@ export default function PaginaInicial() {
                             width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
                         }}
                     >
-                        <Title tag="h2">Boas vindas de volta!</Title>
+                        <Title >Boas vindas de volta!</Title>
                         <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
                             {appConfig.name}
                         </Text>
