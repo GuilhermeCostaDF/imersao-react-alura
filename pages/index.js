@@ -1,5 +1,6 @@
 import appConfig from '../config.json';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import React, {useState} from 'react';
 
 //React Component
 
@@ -64,7 +65,8 @@ export default HomePage
 */
 
 export default function PaginaInicial() {
-    const username = 'GuilhermeCostaDF';
+    //const username = 'GuilhermeCostaDF';
+    const [username, setUsername] = useState('');
 
     return (
         <>
@@ -107,7 +109,26 @@ export default function PaginaInicial() {
                             {appConfig.name}
                         </Text>
 
+                        
+                        {/* <input 
+                            type="text"
+                            value={username}
+                            onChange={function (event) {
+                                //Onde está o valor?
+                                const value = event.target.value;
+                                //Trocar o valor da variavel
+                                setUsername(value);
+                            }}
+                        /> */}
+                        
                         <TextField
+                            value={username}
+                            onChange={function (event) {
+                                //Onde está o valor?
+                                const value = event.target.value;
+                                //Trocar o valor da variavel
+                                setUsername(value);
+                            }}
                             fullWidth
                             textFieldColors={{
                                 neutral: {
