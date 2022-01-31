@@ -2,13 +2,17 @@ import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js';
+import {useRouter} from 'next/router'
+import {ButtonSendSticker} from '../src/components/ButtonSendSticker'
 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzM4MjY2NSwiZXhwIjoxOTU4OTU4NjY1fQ.2yJXPGxa1lePMr_6IYMWKuN1ZC_sfEqGeNQM0HazZkI';
 const SUPABASE_URL = 'https://ukejrkpbztdhoiwnvqqe.supabase.co';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-export default function ChatPage() {
+export default function ChatPage() { 
 
+    const router = useRouter();
+    const usuarioLogado = router.query.username;
     const [mensagem, setMensagem] = React.useState('');
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
@@ -26,7 +30,7 @@ export default function ChatPage() {
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
             id: listaDeMensagens.length + 1,
-            de: 'vanessametonini',
+            de: usuarioLogado,
             texto: novaMensagem,
         };
 
@@ -92,6 +96,7 @@ export default function ChatPage() {
                     })} */}
                     <Box
                         as="form"
+            
                         styleSheet={{
                             display: 'flex',
                             alignItems: 'center',
@@ -122,6 +127,7 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <ButtonSendSticker />
                     </Box>
                 </Box>
             </Box>

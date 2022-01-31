@@ -73,7 +73,7 @@ export default function PaginaInicial() {
                         onSubmit={function (event){
                             event.preventDefault();
                             console.log("enviou...");
-                            router.push('/chat');
+                            router.push(`/chat?username=${username}`);
                             //window.location.href='/chat'
                         }}
                         styleSheet={{
